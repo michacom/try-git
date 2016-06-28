@@ -1,0 +1,11 @@
+<!--
+ - Created by msimkin on 28/06/2016.
+ -->
+
+<apex:page id="Hello_VFP" controller="Hello_Ctrl">
+
+    <p>{! hello }</p>
+
+    <p>{! acc.Id }</p>
+
+</apex:page>
