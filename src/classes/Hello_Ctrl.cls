@@ -4,7 +4,10 @@
 
 public with sharing class Hello_Ctrl {
 
-    public String hello { get { return 'Hello World!'; } }
+    public String hello {
+        get { return null == hello ? (hello = 'Hello World!') : hello; }
+        private set;
+    }
 
     public Account acc {
         get { return null == acc ? (acc = [SELECT Id, Name FROM Account LIMIT 1][0]) : acc; }
@@ -17,5 +20,9 @@ public with sharing class Hello_Ctrl {
     }
 
     public Hello_Ctrl() {}
+
+    public Hello_Ctrl(String hello) {
+        this.hello = hello;
+    }
 
 }

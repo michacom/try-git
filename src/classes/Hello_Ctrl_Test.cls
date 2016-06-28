@@ -13,7 +13,7 @@ private class Hello_Ctrl_Test {
     }
 
     @isTest
-    static void testBehavior() {
+    static void defaults() {
         Test.startTest();
 
         Hello_Ctrl ctrl = new Hello_Ctrl();
@@ -25,6 +25,17 @@ private class Hello_Ctrl_Test {
         Contact con = ctrl.con;
 
         Test.stopTest();
+    }
+
+    @isTest
+    static void customHello() {
+        Test.startTest();
+
+        Hello_Ctrl ctrl = new Hello_Ctrl('a');
+
+        Test.stopTest();
+
+        System.assertEquals('a', ctrl.hello);
     }
 
 }
